@@ -1,7 +1,10 @@
 package com.example.springinversionofcontrol;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 public class BookService {
 
+  @Autowired
   BookRepository bookRepository;
 
   public void setBookRepository(BookRepository bookRepository) {
