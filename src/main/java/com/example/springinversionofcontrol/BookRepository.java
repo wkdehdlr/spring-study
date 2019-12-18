@@ -1,5 +1,4 @@
 package com.example.springinversionofcontrol;
 
-public class BookRepository {
-
+public interface BookRepository {
 }
