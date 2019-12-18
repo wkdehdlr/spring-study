@@ -1,6 +1,5 @@
 package com.example.springinversionofcontrol;
 
-import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -8,9 +7,9 @@ import org.springframework.stereotype.Service;
 public class BookService {
 
   @Autowired
-  List<BookRepository> bookRepository;
+  BookRepository doikBookRepository;
 
   public void printBookRepository(){
-    this.bookRepository.forEach(System.out::println);
+    System.out.println(doikBookRepository.getClass());
   }
 }
