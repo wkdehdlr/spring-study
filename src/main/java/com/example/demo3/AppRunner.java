@@ -15,9 +15,7 @@ public class AppRunner implements ApplicationRunner {
 
   @Override
   public void run(ApplicationArguments args) throws Exception {
-    System.out.println(resourceLoader.getClass());
-    Resource resource = resourceLoader.getResource("text.txt");
-    System.out.println(resource.getClass());
-    System.out.println(resource.exists());
+    Resource resource1 = resourceLoader.getResource("classpath:text.txt");
+    Resource resource2 = resourceLoader.getResource("file:///text.txt");
   }
 }
