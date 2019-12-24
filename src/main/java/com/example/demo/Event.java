@@ -6,6 +6,10 @@ public class Event {
     private Integer id;
     private String title;
 
+    public Event(Integer id){
+        this.id = id;
+    }
+
     public void setTitle(String title) {
         this.title = title;
     }
