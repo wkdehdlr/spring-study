@@ -17,7 +17,7 @@ public class EventControllerTest {
 
     @Autowired
     MockMvc mockMvc;
-
+//
     @Test
     public void getTest() throws Exception {
         mockMvc.perform(get("/event/1"))
