@@ -9,7 +9,7 @@ import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
-@TestPropertySource(properties = "doik.name=doik")
+@TestPropertySource(locations = "classpath:/test.properties")
 @SpringBootTest
 class DemoApplicationTests {
 
