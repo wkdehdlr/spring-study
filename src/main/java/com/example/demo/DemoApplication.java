@@ -20,6 +20,7 @@ public class DemoApplication {
                 out.println("======================");
             }
         });
+        app.setBannerMode(Banner.Mode.OFF);
         app.run(args);
     }
 }
