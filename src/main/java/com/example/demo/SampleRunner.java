@@ -1,17 +1,22 @@
 package com.example.demo;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
 @Component
 public class SampleRunner implements ApplicationRunner {
-    @Autowired
-    private String hello;
+
+    private Logger logger = LoggerFactory.getLogger(SampleRunner.class);
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
-        System.out.println(hello);
+        logger.info("====================");
+        logger.info("logger");
+        logger.info("Debug");
+        logger.info("=====================");
+
     }
 }
