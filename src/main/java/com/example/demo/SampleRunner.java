@@ -16,6 +16,7 @@ public class SampleRunner implements ApplicationRunner {
         System.out.println("=======================");
         System.out.println(doikProperties.getName());
         System.out.println(doikProperties.getAge());
+        System.out.println(doikProperties.getSessionTimeout());
         System.out.println("=======================");
     }
 }
