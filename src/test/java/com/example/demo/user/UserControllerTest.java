@@ -1,6 +1,5 @@
 package com.example.demo.user;
 
-import com.example.demo.UserController;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
