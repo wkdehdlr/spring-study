@@ -11,7 +11,7 @@ import java.sql.Connection;
 import java.sql.Statement;
 
 @Component
-public class MysqlRunner implements ApplicationRunner {
+public class PgSqlRunner implements ApplicationRunner {
 
     @Autowired
     DataSource dataSource;
@@ -26,10 +26,10 @@ public class MysqlRunner implements ApplicationRunner {
             System.out.println(connection.getMetaData().getUserName());
 
             Statement statement = connection.createStatement();
-            String sql = "CREATE TABLE USER(ID INTEGER NOT NULL, name VARCHAR(255), PRIMARY KEY (id))";
+            String sql = "CREATE TABLE account(ID INTEGER NOT NULL, name VARCHAR(255), PRIMARY KEY (id))";
             statement.executeUpdate(sql);
         }
 
-        jdbcTemplate.execute("INSERT INTO USER VALUES (1, 'doik')");
+        jdbcTemplate.execute("INSERT INTO USER account (1, 'doik')");
     }
 }
