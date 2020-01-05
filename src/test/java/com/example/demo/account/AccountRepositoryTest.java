@@ -49,7 +49,7 @@ public class AccountRepositoryTest {
         Account account1 = accountRepository.findByUsername(newAccount.getUsername());
         assertThat(account1).isNotNull();
         Account account2 = accountRepository.findByUsername("asefasefasef");
-        assertThat(account2).isNotNull();
+        assertThat(account2).isNull();
 
     }
 }
