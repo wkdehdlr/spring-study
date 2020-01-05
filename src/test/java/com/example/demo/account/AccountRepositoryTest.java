@@ -12,6 +12,8 @@ import java.sql.Connection;
 import java.sql.DatabaseMetaData;
 import java.sql.SQLException;
 
+import static org.assertj.core.api.Assertions.assertThat;
+
 
 @RunWith(SpringRunner.class)
 @DataJpaTest
@@ -34,5 +36,20 @@ public class AccountRepositoryTest {
              System.out.println(metaData.getDriverName());
              System.out.println(metaData.getUserName());
          }
+    }
+
+    @Test
+    public void di(){
+        Account account = new Account();
+        account.setUsername("doik");
+        account.setPassword("pass");
+
+        Account newAccount = accountRepository.save(account);
+        assertThat(newAccount).isNotNull();
+        Account account1 = accountRepository.findByUsername(newAccount.getUsername());
+        assertThat(account1).isNotNull();
+        Account account2 = accountRepository.findByUsername("asefasefasef");
+        assertThat(account2).isNotNull();
+
     }
 }
