@@ -16,7 +16,6 @@ public class RestRunner implements ApplicationRunner {
     @Override
     public void run(ApplicationArguments args) throws Exception {
         WebClient webClient = builder
-                .baseUrl("http://localhost:8080")
                 .build();
 
         StopWatch stopWatch = new StopWatch();
