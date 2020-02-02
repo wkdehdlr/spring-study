@@ -3,8 +3,8 @@ package com.example.demo;
 
 import org.springframework.data.annotation.Id;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
+import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 public class Account {
@@ -12,9 +12,16 @@ public class Account {
     @Id @GeneratedValue
     private Long id;
 
+    @Column(nullable = false, unique = true)
     private String name;
 
     private String password;
+    
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date created;
+
+    @Transient
+    private String no;
 
     public Long getId() {
         return id;
