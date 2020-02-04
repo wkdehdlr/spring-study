@@ -20,7 +20,6 @@ public class JpaRunner implements ApplicationRunner {
         Account account = new Account();
         account.setName("doik");
         account.setPassword("0725");
-        entityManager.persist(account);
 
         Study study = new Study();
         study.setName("Spring Data JPA");
@@ -29,5 +28,11 @@ public class JpaRunner implements ApplicationRunner {
 
         Session session = entityManager.unwrap(Session.class);
         session.save(account);
+
+        Account load = session.load(Account.class, account.getId());
+        load.setName("whiteship");
+        load.setName("doik2");
+        load.setName("doik");
+        System.out.println(load.getName());
     }
 }
