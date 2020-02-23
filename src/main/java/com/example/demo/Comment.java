@@ -12,6 +12,18 @@ public class Comment {
 
     private String comment;
 
+    public int getLikeCount() {
+        return likeCount;
+    }
+
+    public void setLikeCount(int likeCount) {
+        this.likeCount = likeCount;
+    }
+
+    private int likeCount;
+
+
+
     @ManyToOne
     private Post post;
 
