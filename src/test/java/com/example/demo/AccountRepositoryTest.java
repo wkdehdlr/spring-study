@@ -63,4 +63,19 @@ public class AccountRepositoryTest {
         List<Account> all = accountRepository.findByUsername("doik", Sort.by("Username"));
         assertThat(all.size()).isEqualTo(1);
     }
+
+
+    @Test
+    public void updateName(){
+        Account account = new Account();
+//        int count = accountRepository.updateName("hibernate",account.getId());
+//        assertThat(count).isEqualTo(1);
+//
+//        Optional<Account> byId = accountRepository.findById(account.getId());
+//        assertThat(byId.get().getUsername()).isEqualTo("hibernate");
+
+        account.setUsername("hibernate");
+        List<Account> all = accountRepository.findAll();
+        assertThat(all.get(0).getUsername()).isEqualTo("hibernate");
+    }
 }
