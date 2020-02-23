@@ -5,9 +5,11 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+import org.springframework.data.domain.Sort;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import javax.persistence.EntityManager;
+import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -39,5 +41,26 @@ public class AccountRepositoryTest {
         assertThat(entityManager.contains(account2)).isTrue();
         assertThat(entityManager.contains(updateAccount)).isTrue();
         assertThat(updateAccount == account2);
+    }
+
+
+    @Test
+    public void findByUsernameStartsWith(){
+        Account account = new Account();
+        account.setUsername("doik jang");
+        accountRepository.save(account);
+
+        List<Account> all = accountRepository.findByUsernameStartsWith("doik");
+        assertThat(all.size()).isEqualTo(1);
+    }
+
+    @Test
+    public void findByUsername(){
+        Account account = new Account();
+        account.setUsername("doik jang");
+        accountRepository.save(account);
+
+        List<Account> all = accountRepository.findByUsername("doik", Sort.by("Username"));
+        assertThat(all.size()).isEqualTo(1);
     }
 }
