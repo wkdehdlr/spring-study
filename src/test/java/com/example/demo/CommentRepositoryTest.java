@@ -25,16 +25,19 @@ public class CommentRepositoryTest {
 
         Comment comment = new Comment();
         comment.setAccount(saveAccount);
+        comment.setComment("spring jpa projection");
         comment.setUp(10);
         comment.setDown(1);
         commentRepository.save(comment);
 
-        commentRepository.findByAccount_Id(saveAccount.getId()).forEach( c -> {
+        commentRepository.findByAccount_Id(saveAccount.getId(), CommentSummary.class).forEach( c -> {
             System.out.println("====================");
             System.out.println(c.getVotes());
         });
 
-
-        commentRepository.findByAccount_Id(1L);
+        commentRepository.findByAccount_Id(saveAccount.getId(), CommentOnly.class).forEach( c -> {
+            System.out.println("====================");
+            System.out.println(c.getComment());
+        });
     }
 }

@@ -11,5 +11,5 @@ public interface CommentRepository extends JpaRepository<Comment, Long> {
     @EntityGraph(value = "Comment.account")
     Optional<Comment> getById(Long id);
 
-    List<CommentSummary> findByAccount_Id(Long id);
+    <T> List<T> findByAccount_Id(Long id, Class<T> type);
 }
