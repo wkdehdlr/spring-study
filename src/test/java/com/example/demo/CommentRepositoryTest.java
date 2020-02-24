@@ -17,8 +17,6 @@ public class CommentRepositoryTest {
 
     @Test
     public void getComment(){
-        commentRepository.getById(1L);
-
-        commentRepository.findById(1L);
+        commentRepository.findByAccount_Id(1L);
     }
 }

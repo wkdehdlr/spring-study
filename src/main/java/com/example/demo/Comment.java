@@ -15,6 +15,12 @@ public class Comment {
     @ManyToOne(fetch = FetchType.LAZY)
     private Account account;
 
+    private int up;
+
+    private int down;
+
+    private boolean best;
+
     public Long getId() {
         return id;
     }
